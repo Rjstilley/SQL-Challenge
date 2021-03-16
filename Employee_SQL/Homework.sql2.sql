@@ -19,7 +19,9 @@ select d.dept_no, d.dept_name, dm.emp_no, e.last_name, e.first_name from departm
 	inner join employees e on dm.emp_no = e.emp_no order by emp_no;
 
 -- 4.List the department of each employee with the following information: employee number, last name, first name, and department name.
-
+select e.emp_no, e.last_name, e.first_name, d.dept_name from employees e
+	inner join dep_emp de on de.emp_no=e.emp_no
+	inner join departments d on d.dept_no=de.dept_no order by emp_no;
 
 -- 5.List first name, last name, and sex for employees whose first name is "Hercules" and last names begin with "B."
 
